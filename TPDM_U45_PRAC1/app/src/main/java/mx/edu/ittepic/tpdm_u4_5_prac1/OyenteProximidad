@@ -1,0 +1,18 @@
+package mx.edu.ittepic.tpdm_u4_5_prac1
+
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.widget.Toast
+import mx.edu.ittepic.tpdm_u4_5_prac1.MainActivity
+
+class OyenteProximidad (p : MainActivity) : SensorEventListener {
+    var puntero = p
+    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
+
+    }
+
+    override fun onSensorChanged(p0: SensorEvent?) {
+        puntero.distancia = p0!!.values[0]
+    }
+}
